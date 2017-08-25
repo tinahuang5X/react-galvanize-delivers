@@ -60,7 +60,7 @@ storiesOf('OrderPageLayout', module).add('Layout path', () =>
       ]}
     />
     <OrderFormComponent
-      customer={{
+      customerInfo={{
         id: 101,
         name: 'Warren Buffett',
         phoneNumber: '(415) 866-9447',

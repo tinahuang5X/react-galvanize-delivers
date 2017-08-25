@@ -26,7 +26,7 @@ export default function MenuItemComponent({ item }) {
         </p>
       </div>
       <div className="card-action">
-        <a href="#">ADD TO ORDER</a>
+        <a href=".">ADD TO ORDER</a>
       </div>
     </div>
   );

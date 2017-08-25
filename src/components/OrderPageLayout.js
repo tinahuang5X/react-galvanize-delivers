@@ -4,7 +4,7 @@ export default function OrderPageLayout(props) {
   if (!props.children || !props.children[0] || !props.children[1]) return null;
 
   return (
-    <div className="OrderPage">
+    <div className="OrderPageLayout">
       <header>
         <div className="navbar-fixed">
           <nav>
@@ -13,19 +13,19 @@ export default function OrderPageLayout(props) {
                 Galvanize Delivers
               </a>
               <a
-                href="#"
+                href="."
                 data-activates="orderMenu"
                 className="button-collapse">
                 <i className="material-icons">menu</i>
               </a>
               <ul className="right hide-on-med-and-down">
                 <li className="active">
-                  <a href="#">Order Delivery</a>
+                  <a href=".">Order Delivery</a>
                 </li>
               </ul>
               <ul className="side-nav" id="orderMenu">
                 <li className="active">
-                  <a href="#">Order Delivery</a>
+                  <a href=".">Order Delivery</a>
                 </li>
               </ul>
             </div>
@@ -76,7 +76,7 @@ export default function OrderPageLayout(props) {
                 </a>
                 <br />
                 <br />
-                <a className="white-text" href="#">
+                <a className="white-text" href=".">
                   Order Delivery
                 </a>
               </h6>
