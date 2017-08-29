@@ -9,7 +9,12 @@ export default function OrderPageLayout(props) {
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper light-green">
-              <a href="index.html" className="brand-logo">
+              <a
+                href="index.html"
+                className="brand-logo"
+                style={{
+                  marginLeft: '20px'
+                }}>
                 Galvanize Delivers
               </a>
               <a

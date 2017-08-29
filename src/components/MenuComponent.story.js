@@ -32,5 +32,8 @@ storiesOf('MenuComponent', module).add('Happy path', () =>
         imagePath: '//via.placeholder.com/300x200'
       }
     ]}
+    onAddItem={itemId => {
+      console.log(itemId);
+    }}
   />
 );

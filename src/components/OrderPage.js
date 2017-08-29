@@ -4,20 +4,30 @@ import OrderPageLayout from './OrderPageLayout';
 import MenuComponent from './MenuComponent';
 import OrderTableComponent from './OrderTableComponent';
 import OrderFormComponent from './OrderFormComponent';
+import OrderSuccessMessageComponent from './OrderSuccessMessageComponent';
+import './MenuItemComponent.story.css';
 
 export default function OrderPage({
-  id,
+  //id,
   menuItems,
   orderItems,
   customerInfo,
-  onAddItems
+  onAddItem,
+  onSubmit,
+  onClose
 }) {
   return (
-    <div id={id} className="OrderPage">
+    //<div id={id} className="OrderPage">
+    <div className="OrderPage">
       <OrderPageLayout>
-        <MenuComponent items={menuItems} onAddItems={onAddItems} />
+        <MenuComponent items={menuItems} onAddItem={onAddItem} />
         <OrderTableComponent items={orderItems} />
-        <OrderFormComponent customerInfo={customerInfo} />
+        {customerInfo
+          ? <OrderSuccessMessageComponent
+              customerInfo={customerInfo}
+              onClose={onClose}
+            />
+          : <OrderFormComponent onSubmit={onSubmit} />}
       </OrderPageLayout>
     </div>
   );

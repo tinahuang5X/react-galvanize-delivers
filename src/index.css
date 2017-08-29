@@ -2,10 +2,13 @@
 @import '../node_modules/materialize-css/dist/css/materialize.css';
 
 .MenuItemComponent {
-  margin: 20px;
+  margin: 40px;
   width: 300px;
 }
+
 .MenuComponent {
+  margin-left: 90px;
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 700px;

@@ -31,38 +31,25 @@ const menuItems = [
   }
 ];
 
-const orderItems = [
-  {
-    id: 101,
-    name: 'Royale with Cheese',
-    price: 8.99
-  },
-  {
-    id: 102,
-    name: 'Arugula Pie',
-    price: 11.99
-  },
-  {
-    id: 103,
-    name: 'Smoked Swine',
-    price: 14.99
-  },
-  {
-    id: 104,
-    name: 'Ice Cream Biscuit',
-    price: 7.99
-  }
-];
+const orderItems = [];
 
-const customerInfo = {
-  id: 101,
-  name: 'Warren Buffett',
-  phoneNumber: '(415) 866-9447',
-  address: '123 Breakfast Dr. MA 15667'
-};
+let customerInfo = null;
+
+//render();
 
 function handleAddItem(itemId) {
   orderItems.push(menuItems.find(item => item.id === itemId));
+  render();
+}
+
+function onSubmit(info) {
+  customerInfo = info;
+  render();
+}
+
+function onClose() {
+  console.log('successfully');
+  customerInfo = null;
   render();
 }
 
@@ -72,7 +59,9 @@ function render() {
       menuItems={menuItems}
       orderItems={orderItems}
       customerInfo={customerInfo}
-      onAddItems={handleAddItem}
+      onAddItem={handleAddItem}
+      onSubmit={onSubmit}
+      onClose={onClose}
     />,
     document.getElementById('root')
   );
