@@ -31,7 +31,7 @@ const menuItems = [
   }
 ];
 
-const orderItems = [];
+let orderItems = [];
 
 let customerInfo = null;
 
@@ -48,8 +48,9 @@ function onSubmit(info) {
 }
 
 function onClose() {
-  console.log('successfully');
+  //console.log('successfully');
   customerInfo = null;
+  orderItems = [];
   render();
 }
 
