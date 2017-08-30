@@ -70,7 +70,7 @@ export default class OrderFormComponent extends Component {
     const address = $form.textarea1.value.trim();
     //console.log({ name, phone, address });
     let regPhone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (phone.match(regPhone) || name === null) {
+    if (phone.match(regPhone) && name) {
       this.props.onSubmit({ name, phone, address });
     } else this.setState({ hasValidationError: true });
   };
