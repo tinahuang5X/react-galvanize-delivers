@@ -37,7 +37,7 @@ export default function OrderPageLayout(props) {
           </nav>
         </div>
       </header>
-      <div className="Container" style={{ height: '900px' }}>
+      <div className="Container" style={{ height: '1300px' }}>
         <div
           className="Menu"
           style={{

@@ -20,8 +20,8 @@ export default function OrderTableComponent({ items }) {
         </tr>
       </thead>
       <tbody>
-        {items.map(item =>
-          <OrderTableItemComponent key={item.id} item={item} />
+        {items.map((item, i) =>
+          <OrderTableItemComponent key={i} item={item} />
         )}
       </tbody>
       <tfoot>
