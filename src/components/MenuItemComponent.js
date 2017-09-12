@@ -25,14 +25,15 @@ export default function MenuItemComponent({ item, onAddItem }) {
         <h5 className="card-title">
           {item.name || 'N/A'}
         </h5>
-        <p>
+
+        <p className="card-price">
           {item.price && typeof item.price === 'number'
             ? `$${item.price.toFixed(2)}`
             : 'N/A'}
         </p>
       </div>
       <div className="card-action">
-        <a href="." onClick={handleClick}>
+        <a href="." className="testClick" onClick={handleClick}>
           ADD TO ORDER
         </a>
       </div>
