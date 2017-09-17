@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 //import './App.css';
 import OrderPage from './components/OrderPage';
 
-import getMenuItems from './requests/getMenuItems';
+// import getMenuItems from './requests/getMenuItems';
+import getMenuItemsProcess from './redux/thunks/getMenuItemsProcess';
 
 //app = new App({});
 //element = app.render()
@@ -42,9 +43,10 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    getMenuItems().then(menuItems => {
-      this.props.store.dispatch({ type: 'SET_ITEMS', menuItems });
-    });
+    // getMenuItems().then(menuItems => {
+    //   this.props.store.dispatch({ type: 'SET_ITEMS', menuItems });
+    // });
+    this.props.store.dispatch(getMenuItemsProcess());
   }
   _addItem = itemId => {
     let itemToBeAdded = this.state.menuItems.find(
