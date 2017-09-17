@@ -97,15 +97,15 @@ import data from '../../mock-data';
 //   });
 
 test('reducers', () => {
-  let state;
-  state = rootReducer(
+  let currentState;
+  currentState = rootReducer(
     { menuItems: null, orderItems: [], customerInfo: null },
     {
       type: 'SET_ITEMS',
       menuItems: [...data.menuItems]
     }
   );
-  expect(state).toEqual({
+  expect(currentState).toEqual({
     menuItems: [...data.menuItems],
     orderItems: [],
     customerInfo: null
@@ -113,8 +113,8 @@ test('reducers', () => {
 });
 
 test('reducers', () => {
-  let state;
-  state = rootReducer(
+  let currentState;
+  currentState = rootReducer(
     {
       menuItems: [...data.menuItems],
       orderItems: [],
@@ -122,41 +122,22 @@ test('reducers', () => {
     },
     {
       type: 'ADD_ITEM',
-      itemToBeAdded: {
-        id: 1004,
-        name: 'Ice Cream Biscut',
-        price: 7.99,
-        imagePath: 'img/ice_cream.jpg'
-      }
+      itemToBeAdded: data.menuItems[3]
     }
   );
-  expect(state).toEqual({
+  expect(currentState).toEqual({
     menuItems: [...data.menuItems],
-    orderItems: [
-      {
-        id: 1004,
-        name: 'Ice Cream Biscut',
-        price: 7.99,
-        imagePath: 'img/ice_cream.jpg'
-      }
-    ],
+    orderItems: [data.menuItems[3]],
     customerInfo: null
   });
 });
 
 test('reducers', () => {
-  let state;
-  state = rootReducer(
+  let currentState;
+  currentState = rootReducer(
     {
       menuItems: [...data.menuItems],
-      orderItems: [
-        {
-          id: 1004,
-          name: 'Ice Cream Biscut',
-          price: 7.99,
-          imagePath: 'img/ice_cream.jpg'
-        }
-      ],
+      orderItems: [data.menuItems[3]],
       customerInfo: null
     },
     {
@@ -168,16 +149,9 @@ test('reducers', () => {
       }
     }
   );
-  expect(state).toEqual({
+  expect(currentState).toEqual({
     menuItems: [...data.menuItems],
-    orderItems: [
-      {
-        id: 1004,
-        name: 'Ice Cream Biscut',
-        price: 7.99,
-        imagePath: 'img/ice_cream.jpg'
-      }
-    ],
+    orderItems: [data.menuItems[3]],
     customerInfo: {
       name: 'Tina',
       phone: '4153333333',
@@ -187,18 +161,11 @@ test('reducers', () => {
 });
 
 test('reducers', () => {
-  let state;
-  state = rootReducer(
+  let currentState;
+  currentState = rootReducer(
     {
       menuItems: [...data.menuItems],
-      orderItems: [
-        {
-          id: 1004,
-          name: 'Ice Cream Biscut',
-          price: 7.99,
-          imagePath: 'img/ice_cream.jpg'
-        }
-      ],
+      orderItems: [data.menuItems[3]],
       customerInfo: {
         name: 'Tina',
         phone: '4153333333',
@@ -207,7 +174,7 @@ test('reducers', () => {
     },
     { type: 'CLOSE_ORDER', customerInfo: null, orderItems: [] }
   );
-  expect(state).toEqual({
+  expect(currentState).toEqual({
     menuItems: [...data.menuItems],
     orderItems: [],
     customerInfo: null
