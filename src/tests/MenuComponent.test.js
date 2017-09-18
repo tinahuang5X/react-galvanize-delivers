@@ -7,13 +7,12 @@ import React from 'react';
 import { mount } from 'enzyme';
 import MenuItemComponent from '../components/MenuItemComponent';
 import MenuComponent from '../components/MenuComponent';
-
 const item = {
   name: 'Some Item A',
   price: 9.99,
-  imagePath: '//via.placeholder.com/300x200'
+  imagePath: '//via.placeholder.com/300x200',
+  id: 5
 };
-
 const menuItems = [
   {
     name: 'Smoked Swine',
@@ -42,11 +41,20 @@ const menuItems = [
 ];
 
 describe('a unit test for MenuComponent', () => {
-  it('should test if onAddItem function was triggered', () => {
+  it('should test if onAddItem function is triggered when "Add to Order" button is clicked', () => {
     const onAddItem = jest.fn();
-    mount(<MenuItemComponent onAddItem={onAddItem} item={item} />)
-      .find('.testClick')
-      .simulate('click');
+    const item = [
+      {
+        name: 'Some Item A',
+        price: 9.99,
+        imagePath: '//via.placeholder.com/300x200',
+        id: 5
+      }
+    ];
+    const fullWrapper = mount(
+      <MenuComponent items={item} onAddItem={onAddItem} />
+    );
+    fullWrapper.find('MenuItemComponent').find('.testClick').simulate('click');
     expect(onAddItem).toHaveBeenCalled();
   });
 
