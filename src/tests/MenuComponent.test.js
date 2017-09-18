@@ -62,11 +62,12 @@ describe('a unit test for MenuComponent', () => {
     expect(numOfComponents.length).toEqual(menuItems.length);
   });
 
-  it('tests children elemenets with full rendering', () => {
+  it('tests children elements with full rendering', () => {
     expect(mount(<MenuComponent items={menuItems} />).children()).toHaveLength(
-      4
+      menuItems.length
     );
   });
+
   it('tests against parent and children components', () => {
     expect(
       mount(<MenuComponent items={menuItems} />).find('.card')
